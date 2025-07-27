@@ -14,13 +14,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Upload static files
-        uses: actions/upload-pages-artifact@v2   # ✅ correct version
+        uses: actions/upload-pages-artifact@v2   # ✅ Correct GitHub Pages upload action
         with:
-          path: frontend                         # ✅ your folder
+          path: frontend                         # ✅ Make sure 'frontend/index.html' exists
 
   deploy:
     needs: build
@@ -32,4 +32,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v3           # ✅ correct version
+        uses: actions/deploy-pages@v3            # ✅ Correct deployment action
