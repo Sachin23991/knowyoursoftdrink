@@ -3,7 +3,7 @@ name: Deploy frontend to GitHub Pages
 on:
   push:
     branches:
-      - main  # or your default branch
+      - main
 
 permissions:
   contents: read
@@ -15,12 +15,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Upload static files
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3  # ✅ updated from v2
+
         with:
-          path: frontend  # 👈 This is your real folder, not /docs
+          path: frontend  # your static site folder
 
   deploy:
     needs: build
@@ -31,4 +32,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4  # ✅ updated from v2
