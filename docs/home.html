@@ -157,7 +157,7 @@
     auth.onAuthStateChanged(user => {
         currentUser = user;
         if (user) {
-            const photoURL = user.photoURL || 'https://i.ibb.co/6yvC0rT/default-avatar.png';
+            const photoURL = user.photoURL || 'images/default-avatar.png';
             profileLinkContainer.innerHTML = `
                 <a href="profile.html" class="profile-nav-link" title="View Profile">
                     <img id="nav-profile-pic" src="${photoURL}" alt="My Profile">
