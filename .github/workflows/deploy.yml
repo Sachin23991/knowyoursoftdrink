@@ -21,7 +21,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3  # ✅ updated from v2
 
         with:
-          path: frontend  # your static site folder
+          path: docs  # your static site folder
 
   deploy:
     needs: build
